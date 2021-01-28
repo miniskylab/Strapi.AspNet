@@ -32,14 +32,11 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-nuget-
 
-    - name: Restore packages
-      run: dotnet restore
-
     - name: Pack
       run: |
-        dotnet pack Strapi.AspNet.Annotations/Strapi.AspNet.Annotations.csproj --no-restore -c Release
-        dotnet pack Strapi.AspNet.Hosting/Strapi.AspNet.Hosting.csproj --no-restore -c Release
-        dotnet pack Strapi.AspNet.DataModel/Strapi.AspNet.DataModel.csproj --no-restore -c Release
-        dotnet pack Strapi.AspNet.Engine/Strapi.AspNet.Engine.csproj --no-restore -c Release
-        dotnet pack Strapi.AspNet.Cms/Strapi.AspNet.Cms.csproj --no-restore -c Release
+        dotnet pack Strapi.AspNet.Annotations/Strapi.AspNet.Annotations.csproj -c Release
+        dotnet pack Strapi.AspNet.Hosting/Strapi.AspNet.Hosting.csproj -c Release
+        dotnet pack Strapi.AspNet.DataModel/Strapi.AspNet.DataModel.csproj -c Release
+        dotnet pack Strapi.AspNet.Engine/Strapi.AspNet.Engine.csproj -c Release
+        dotnet pack Strapi.AspNet.Cms/Strapi.AspNet.Cms.csproj -c Release
 
