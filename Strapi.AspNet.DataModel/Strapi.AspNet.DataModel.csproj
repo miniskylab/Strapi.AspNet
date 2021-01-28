@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;</TargetFrameworks>
+    <Description>Strapi.AspNet.DataModel</Description>
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'true' ">
+      <ItemGroup>
+        <ProjectReference Include="..\..\Orbital.Core\Orbital.Core.csproj" />
+        <ProjectReference Include="..\Strapi.AspNet.Annotations\Strapi.AspNet.Annotations.csproj" />
+      </ItemGroup>
+    </When>
+
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="Orbital.Core" Version="1.0.1-alpha" />
+        <PackageReference Include="Strapi.AspNet.Annotations" Version="1.0.1-alpha" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+</Project>

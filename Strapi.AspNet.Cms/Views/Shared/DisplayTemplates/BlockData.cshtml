@@ -1,0 +1,4 @@
+@using Strapi.AspNet.Cms
+@model Strapi.AspNet.DataModel.BlockData
+
+@await Component.InvokeAsync($"{nameof(StrapiBlockController)}", new { blockData = Model })

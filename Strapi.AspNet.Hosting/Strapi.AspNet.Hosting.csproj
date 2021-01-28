@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.Build.NoTargets/2.0.1">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;</TargetFrameworks>
+    <NoBuild>true</NoBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <Description>Strapi.AspNet.Hosting</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="build\Strapi.AspNet.Hosting.targets">
+      <PackagePath>build\Strapi.AspNet.Hosting.targets</PackagePath>
+    </Content>
+
+    <Content Include="strapi\**\*.*" CopyToOutputDirectory="PreserveNewest">
+      <PackagePath>strapi</PackagePath>
+    </Content>
+
+    <None Remove="strapi\node_modules\**" />
+    <Content Remove="strapi\node_modules\**" />
+    <Compile Remove="strapi\node_modules\**" />
+    <EmbeddedResource Remove="strapi\node_modules\**" />
+  </ItemGroup>
+</Project>

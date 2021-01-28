@@ -1,0 +1,19 @@
+<Project>
+  <ItemGroup>
+    <StrapiFiles Include="$(MSBuildThisFileDirectory)\..\strapi\**\*.*" />
+  </ItemGroup>
+
+  <Target Name="StrapiExternalBuild" AfterTargets="Build">
+    <Copy
+        SourceFiles="@(StrapiFiles)"
+        DestinationFiles="@(StrapiFiles->'$(TargetDir)strapi\%(RecursiveDir)%(Filename)%(Extension)')"
+    />
+  </Target>
+
+  <Target Name="StrapiExternalPublish" AfterTargets="Publish">
+    <Copy
+        SourceFiles="@(StrapiFiles)"
+        DestinationFiles="@(StrapiFiles->'$(PublishDir)strapi\%(RecursiveDir)%(Filename)%(Extension)')"
+    />
+  </Target>
+</Project>

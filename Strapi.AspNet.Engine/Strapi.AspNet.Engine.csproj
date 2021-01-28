@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;</TargetFrameworks>
+    <Description>Strapi.AspNet.Engine</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.4" />
+  </ItemGroup>
+
+  <Choose>
+    <When Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'true' ">
+      <ItemGroup>
+        <ProjectReference Include="..\Strapi.AspNet.DataModel\Strapi.AspNet.DataModel.csproj" />
+        <ProjectReference Include="..\Strapi.AspNet.Hosting\Strapi.AspNet.Hosting.csproj" ExcludeAssets="Build;Analyzers" />
+      </ItemGroup>
+    </When>
+
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="Strapi.AspNet.DataModel" Version="1.0.1-alpha" />
+        <PackageReference Include="Strapi.AspNet.Hosting" Version="1.0.1-alpha" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+</Project>
