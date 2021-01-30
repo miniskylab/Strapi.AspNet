@@ -19,7 +19,7 @@
 
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Strapi.AspNet.Engine" Version="1.0.1-alpha" />
+        <PackageReference Include="Strapi.AspNet.Engine" Version="1.0.2-alpha" />
       </ItemGroup>
     </Otherwise>
   </Choose>

@@ -18,8 +18,8 @@
 
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Strapi.AspNet.DataModel" Version="1.0.1-alpha" />
-        <PackageReference Include="Strapi.AspNet.Hosting" Version="1.0.1-alpha" />
+        <PackageReference Include="Strapi.AspNet.DataModel" Version="1.0.2-alpha" />
+        <PackageReference Include="Strapi.AspNet.Hosting" Version="1.0.2-alpha" />
       </ItemGroup>
     </Otherwise>
   </Choose>
