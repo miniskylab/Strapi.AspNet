@@ -12,14 +12,12 @@
     <When Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'true' ">
       <ItemGroup>
         <ProjectReference Include="..\Strapi.AspNet.DataModel\Strapi.AspNet.DataModel.csproj" />
-        <ProjectReference Include="..\Strapi.AspNet.Hosting\Strapi.AspNet.Hosting.csproj" ExcludeAssets="Build;Analyzers" />
       </ItemGroup>
     </When>
 
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Strapi.AspNet.DataModel" Version="1.0.2-alpha" />
-        <PackageReference Include="Strapi.AspNet.Hosting" Version="1.0.2-alpha" />
+        <PackageReference Include="Strapi.AspNet.DataModel" Version="1.0.4-alpha" />
       </ItemGroup>
     </Otherwise>
   </Choose>
