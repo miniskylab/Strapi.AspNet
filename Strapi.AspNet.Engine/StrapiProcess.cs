@@ -28,7 +28,11 @@ namespace Strapi.AspNet.Engine
             _strapiAdmin = strapiAdmin;
             _appSettings = appSettings;
 
-            _pathToStrapiInitializationMarkerFile = $"{Path.Combine(_appSettings.PathToWorkingDirectory, "strapi", "strapi.initialized")}";
+            _pathToStrapiInitializationMarkerFile = Path.Combine(
+                _appSettings.PathToWorkingDirectory,
+                "strapi", "node_modules", "strapi.initialized"
+            );
+
             _process = CreateAndConfigureStrapiProcess();
         }
 
