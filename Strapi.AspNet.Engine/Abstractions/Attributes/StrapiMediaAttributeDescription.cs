@@ -22,7 +22,7 @@ namespace Strapi.AspNet.Engine
         public override StrapiAttributeDescription ToStrapiAttributeModel()
         {
             return IsMultiple.HasValue && IsMultiple.Value
-                ? (StrapiAttributeDescription) new StrapiMultipleMediaAttributeModel(AllowedTypes, IsPrivate, IsRequired, IsUnique)
+                ? new StrapiMultipleMediaAttributeModel(AllowedTypes, IsPrivate, IsRequired, IsUnique)
                 : new StrapiSingleMediaAttributeModel(AllowedTypes, IsPrivate, IsRequired, IsUnique);
         }
 
