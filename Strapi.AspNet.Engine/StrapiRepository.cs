@@ -5,7 +5,7 @@ using System.Net.Http;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using Newtonsoft.Json.Linq;
 using Orbital.Core;
 using Strapi.AspNet.DataModel;
@@ -79,7 +79,7 @@ namespace Strapi.AspNet.Engine
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-                optionsBuilder.UseMySql(new MySqlConnectionStringBuilder
+                var connectionString = new MySqlConnectionStringBuilder
                 {
                     Database = _appSettings.Get("Strapi:MySql:Database"),
                     UserID = _appSettings.Get("Strapi:MySql:Username"),
@@ -87,7 +87,12 @@ namespace Strapi.AspNet.Engine
                     Server = _appSettings.Get("Strapi:MySql:IpAddress"),
                     Port = _appSettings.Get<uint>("Strapi:MySql:Port"),
                     ConnectionTimeout = 3600
-                }.ToString());
+                }.ToString();
+
+                optionsBuilder.UseMySql(
+                    connectionString,
+                    ServerVersion.AutoDetect(connectionString)
+                );
             }
         }
 
