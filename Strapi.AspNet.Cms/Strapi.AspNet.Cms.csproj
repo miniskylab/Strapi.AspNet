@@ -6,6 +6,16 @@
     <Description>Strapi.AspNet.Cms</Description>
   </PropertyGroup>
 
+  <!-- TODO: Remove warning AD0001 from <NoWarn> in the future when possible. -->
+  <!--
+    Adding [Swashbuckle.AspNetCore nuget] to [Orbital.Core project] causes
+    [Microsoft.AspNetCore.Mvc.Analyzers.TopLevelParameterNameAnalyzer] to throw NRE.
+    We don't know why but this is not our problem!
+  -->
+  <PropertyGroup>
+    <NoWarn>1701;1702;AD0001</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.6" />
   </ItemGroup>
