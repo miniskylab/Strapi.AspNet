@@ -23,7 +23,7 @@ jobs:
     - name: Set .NET Core version
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: "5.0.x"
+        dotnet-version: "5.0.203"
 
     - name: Nuget cache
       uses: actions/cache@v2
