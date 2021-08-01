@@ -4,19 +4,27 @@
     <Description>Strapi.AspNet.DataModel</Description>
   </PropertyGroup>
 
-  <Choose>
-    <When Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'true' ">
-      <ItemGroup>
-        <ProjectReference Include="..\..\..\Platform\Orbital.Core\Orbital.Core.csproj" />
-        <ProjectReference Include="..\Strapi.AspNet.Annotations\Strapi.AspNet.Annotations.csproj" />
-      </ItemGroup>
-    </When>
+  <ItemGroup>
+    <PackageReference
+        Include="Orbital.Core"
+        Version="1.0.1-alpha"
+        Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'false' "
+    />
+    <PackageReference
+        Include="Strapi.AspNet.Annotations"
+        Version="1.0.4-alpha"
+        Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'false' "
+    />
+  </ItemGroup>
 
-    <Otherwise>
-      <ItemGroup>
-        <PackageReference Include="Orbital.Core" Version="1.0.1-alpha" />
-        <PackageReference Include="Strapi.AspNet.Annotations" Version="1.0.4-alpha" />
-      </ItemGroup>
-    </Otherwise>
-  </Choose>
+  <ItemGroup>
+    <ProjectReference
+        Include="..\..\..\Platform\Orbital.Core\Orbital.Core.csproj"
+        Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'true' "
+    />
+    <ProjectReference
+        Include="..\Strapi.AspNet.Annotations\Strapi.AspNet.Annotations.csproj"
+        Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'true' "
+    />
+  </ItemGroup>
 </Project>

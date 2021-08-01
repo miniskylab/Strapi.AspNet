@@ -18,19 +18,17 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.8" />
+    <PackageReference
+        Include="Strapi.AspNet.Engine"
+        Version="1.0.4-alpha"
+        Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'false' "
+    />
   </ItemGroup>
 
-  <Choose>
-    <When Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'true' ">
-      <ItemGroup>
-        <ProjectReference Include="..\Strapi.AspNet.Engine\Strapi.AspNet.Engine.csproj" />
-      </ItemGroup>
-    </When>
-
-    <Otherwise>
-      <ItemGroup>
-        <PackageReference Include="Strapi.AspNet.Engine" Version="1.0.4-alpha" />
-      </ItemGroup>
-    </Otherwise>
-  </Choose>
+  <ItemGroup>
+    <ProjectReference
+        Include="..\Strapi.AspNet.Engine\Strapi.AspNet.Engine.csproj"
+        Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'true' "
+    />
+  </ItemGroup>
 </Project>

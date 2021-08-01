@@ -6,19 +6,17 @@
 
   <ItemGroup>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1" />
+    <PackageReference
+        Include="Strapi.AspNet.DataModel"
+        Version="1.0.4-alpha"
+        Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'false' "
+    />
   </ItemGroup>
 
-  <Choose>
-    <When Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'true' ">
-      <ItemGroup>
-        <ProjectReference Include="..\Strapi.AspNet.DataModel\Strapi.AspNet.DataModel.csproj" />
-      </ItemGroup>
-    </When>
-
-    <Otherwise>
-      <ItemGroup>
-        <PackageReference Include="Strapi.AspNet.DataModel" Version="1.0.4-alpha" />
-      </ItemGroup>
-    </Otherwise>
-  </Choose>
+  <ItemGroup>
+    <ProjectReference
+        Include="..\Strapi.AspNet.DataModel\Strapi.AspNet.DataModel.csproj"
+        Condition=" '$(Configuration.StartsWith(`MonoRepo-`))' == 'true' "
+    />
+  </ItemGroup>
 </Project>
