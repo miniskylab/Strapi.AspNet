@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MySqlConnector;
 using Newtonsoft.Json.Linq;
-using Orbital.Core;
+using MiniSkyLab.Core;
 using Strapi.AspNet.DataModel;
 
 namespace Strapi.AspNet.Engine

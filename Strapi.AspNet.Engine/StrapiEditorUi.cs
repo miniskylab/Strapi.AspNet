@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Reflection;
 using JetBrains.Annotations;
 using Newtonsoft.Json.Linq;
-using Orbital.Core;
+using MiniSkyLab.Core;
 using Strapi.AspNet.Annotations;
 using Strapi.AspNet.DataModel;
 

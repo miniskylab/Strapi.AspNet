@@ -1,4 +1,4 @@
-using Orbital.Core;
+using MiniSkyLab.Core;
 using Strapi.AspNet.DataModel;
 
 namespace Strapi.AspNet.Cms

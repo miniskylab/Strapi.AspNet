@@ -11,7 +11,7 @@ using System.Threading;
 using JetBrains.Annotations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Orbital.Core;
+using MiniSkyLab.Core;
 
 namespace Strapi.AspNet.Engine
 {

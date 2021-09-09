@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Orbital.Core;
+using MiniSkyLab.Core;
 using Strapi.AspNet.Annotations;
 using Strapi.AspNet.DataModel;
 

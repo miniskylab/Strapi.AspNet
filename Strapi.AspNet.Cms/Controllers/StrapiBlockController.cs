@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Microsoft.Extensions.DependencyInjection;
-using Orbital.Core;
+using MiniSkyLab.Core;
 using Strapi.AspNet.DataModel;
 
 namespace Strapi.AspNet.Cms

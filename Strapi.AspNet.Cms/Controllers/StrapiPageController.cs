@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using Orbital.Core;
+using MiniSkyLab.Core;
 using Strapi.AspNet.DataModel;
 
 namespace Strapi.AspNet.Cms

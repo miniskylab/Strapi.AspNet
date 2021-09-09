@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json.Linq;
-using Orbital.Core;
+using MiniSkyLab.Core;
 using Strapi.AspNet.Annotations;
 
 namespace Strapi.AspNet.DataModel

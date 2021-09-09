@@ -8,7 +8,7 @@
 
   <!-- TODO: Remove warning AD0001 from <NoWarn> in the future when possible. -->
   <!--
-    Adding [Swashbuckle.AspNetCore nuget] to [Orbital.Core project] causes
+    Adding [Swashbuckle.AspNetCore nuget] to [MiniSkyLab.Core project] causes
     [Microsoft.AspNetCore.Mvc.Analyzers.TopLevelParameterNameAnalyzer] to throw NRE when build/re-build this project.
     We don't know why but this is not our problem!
   -->

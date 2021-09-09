@@ -18,10 +18,10 @@ namespace Strapi.AspNet.Engine
 
         public StrapiDefaultAdminRegistrationDto()
         {
-            Email = "admin@orbital.com";
-            FirstName = "Orbital";
+            Email = "admin@miniskylab.com";
+            FirstName = "MiniSkyLab";
             LastName = "Admin";
-            Password = "Orbital@Admin1";
+            Password = "MiniSkyLab@Admin1";
         }
     }
 }
