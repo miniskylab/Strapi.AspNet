@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "strapi",
+  "name": "@miniskylab/strapi",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",

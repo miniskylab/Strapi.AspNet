@@ -17,27 +17,27 @@ jobs:
     runs-on: ubuntu-18.04
     timeout-minutes: 15
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Set .NET Core version
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: "5.0.205"
+      - name: Set .NET Core version
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "5.0.205"
 
-    - name: Nuget cache
-      uses: actions/cache@v2
-      with:
-        path: ${{ github.workspace }}/.nuget/packages
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
-        restore-keys: |
-          ${{ runner.os }}-nuget-
+      - name: Nuget cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
 
-    - name: Pack
-      run: |
-        dotnet pack Strapi.AspNet.Annotations/Strapi.AspNet.Annotations.csproj --configuration Release
-        dotnet pack Strapi.AspNet.Hosting/Strapi.AspNet.Hosting.csproj --configuration Release
-        dotnet pack Strapi.AspNet.DataModel/Strapi.AspNet.DataModel.csproj --configuration Release
-        dotnet pack Strapi.AspNet.Engine/Strapi.AspNet.Engine.csproj --configuration Release
-        dotnet pack Strapi.AspNet.Cms/Strapi.AspNet.Cms.csproj --configuration Release
+      - name: Pack
+        run: |
+          dotnet pack Strapi.AspNet.Annotations/Strapi.AspNet.Annotations.csproj --configuration Release
+          dotnet pack Strapi.AspNet.Hosting/Strapi.AspNet.Hosting.csproj --configuration Release
+          dotnet pack Strapi.AspNet.DataModel/Strapi.AspNet.DataModel.csproj --configuration Release
+          dotnet pack Strapi.AspNet.Engine/Strapi.AspNet.Engine.csproj --configuration Release
+          dotnet pack Strapi.AspNet.Cms/Strapi.AspNet.Cms.csproj --configuration Release
 
