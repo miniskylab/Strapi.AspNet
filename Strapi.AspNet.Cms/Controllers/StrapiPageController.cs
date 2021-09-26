@@ -19,7 +19,7 @@ namespace Strapi.AspNet.Cms
         }
 
         [HttpGet("{*url}", Order = -999999)]
-        public IActionResult Get()
+        public IActionResult Get(string url)
         {
             var pageData = _contentRepository.GetPageData(HttpContext.Request.Path.Value.TrimStart('/'));
             if (pageData == null)
@@ -37,7 +37,7 @@ namespace Strapi.AspNet.Cms
                 do
                 {
                     x = x.BaseType;
-                    while (x != null && !x.IsGenericType)
+                    while (x is { IsGenericType: false })
                         x = x.BaseType;
                 } while (x != null && x.GetGenericTypeDefinition() != typeof(PageController<>));
 
