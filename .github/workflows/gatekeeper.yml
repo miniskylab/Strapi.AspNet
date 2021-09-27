@@ -35,9 +35,9 @@ jobs:
 
       - name: Pack
         run: |
-          dotnet pack Strapi.AspNet.Annotations/Strapi.AspNet.Annotations.csproj --configuration Release
-          dotnet pack Strapi.AspNet.Hosting/Strapi.AspNet.Hosting.csproj --configuration Release
-          dotnet pack Strapi.AspNet.DataModel/Strapi.AspNet.DataModel.csproj --configuration Release
-          dotnet pack Strapi.AspNet.Engine/Strapi.AspNet.Engine.csproj --configuration Release
-          dotnet pack Strapi.AspNet.Cms/Strapi.AspNet.Cms.csproj --configuration Release
+          dotnet pack Strapi.AspNet.Annotations/Strapi.AspNet.Annotations.csproj --nologo --configuration Release
+          dotnet pack Strapi.AspNet.Hosting/Strapi.AspNet.Hosting.csproj --nologo --configuration Release
+          dotnet pack Strapi.AspNet.DataModel/Strapi.AspNet.DataModel.csproj --nologo --configuration Release
+          dotnet pack Strapi.AspNet.Engine/Strapi.AspNet.Engine.csproj --nologo --configuration Release
+          dotnet pack Strapi.AspNet.Cms/Strapi.AspNet.Cms.csproj --nologo --configuration Release
 
