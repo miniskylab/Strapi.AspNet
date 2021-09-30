@@ -18,7 +18,7 @@ namespace Strapi.AspNet.Cms
             _contentRepository = contentRepository;
         }
 
-        [HttpGet("{*url}", Order = -999999)]
+        [HttpGet("{*url}", Order = 999999)]
         public IActionResult Get(string url)
         {
             var pageData = _contentRepository.GetPageData(HttpContext.Request.Path.Value.TrimStart('/'));
