@@ -6,13 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1"/>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.2" />
   </ItemGroup>
 
   <Choose>
     <When Condition=" '$(MonoRepoBuild)' == 'true' ">
       <ItemGroup>
-        <ProjectReference Include="..\Strapi.AspNet.DataModel\Strapi.AspNet.DataModel.csproj"/>
+        <ProjectReference Include="..\Strapi.AspNet.DataModel\Strapi.AspNet.DataModel.csproj" />
       </ItemGroup>
     </When>
 
