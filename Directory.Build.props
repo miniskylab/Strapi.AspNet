@@ -8,7 +8,7 @@
     <Authors>Cù Đức Hiếu</Authors>
     <PackageVersion>1.0.4-alpha</PackageVersion>
     <Copyright>Copyright © 2021 Cù Đức Hiếu</Copyright>
-    <RepositoryUrl>https://github.com/mini-skylab/Strapi.AspNet</RepositoryUrl>
+    <RepositoryUrl>https://github.com/miniskylab/Strapi.AspNet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageOutputPath>$(ProjectDir)..\..\.terminal\nupkgs</PackageOutputPath>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
