@@ -14,7 +14,7 @@ on:
 jobs:
   Gatekeeping:
     name: Gatekeeping
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     timeout-minutes: 15
     steps:
       - name: Checkout
@@ -23,7 +23,7 @@ jobs:
       - name: Set .NET Core version
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: "5.0.205"
+          dotnet-version: "6.x"
 
       - name: Nuget cache
         uses: actions/cache@v2
